@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom'
 import 'font-awesome/css/font-awesome.css'
 
 import { AppContainer } from 'react-hot-loader'
+import moment from 'moment'
 
 import App from './app'
 
 import './main.css'
+
+moment.locale('zh-cn')
 
 const rootEl = document.getElementById('root')
 const render = Component =>

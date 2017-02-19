@@ -26,4 +26,3 @@ module.exports = function({ isDev = false } = {}) {
 
   return entry
 }
-

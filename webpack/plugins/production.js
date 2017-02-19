@@ -10,5 +10,5 @@ module.exports = [
   new webpack.optimize.UglifyJsPlugin({
   }),
   new ExtractTextPlugin('[name]-[hash:8].css'),
+  new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/),
 ]
-

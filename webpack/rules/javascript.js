@@ -20,7 +20,8 @@ module.exports = function({ isDev }) {
         plugins:
           isDev ? [
             'react-hot-loader/babel',
-          ] : [],
+            'syntax-dynamic-import',
+          ] : ['syntax-dynamic-import'],
       },
 
       include: PATHS.app,
@@ -36,4 +37,3 @@ module.exports = function({ isDev }) {
     },
   ]
 }
-

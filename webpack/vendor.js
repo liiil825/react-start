@@ -1,7 +1,7 @@
 const bundles = [
   {
     name: 'vendor',
-    entry: ['react', 'react-dom'],
+    entry: ['react', 'react-dom', 'moment'],
   },
   {
     name: 'moment',
@@ -14,7 +14,7 @@ const names = []
 
 bundles.forEach((o) => {
   names.push(o.name)
-  entryNames[o.name] = o.entry
+  if (o.entry) entryNames[o.name] = o.entry
 })
 
 module.exports = {
