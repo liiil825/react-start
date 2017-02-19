@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const devPlugin = require('./development.js')
@@ -10,6 +11,10 @@ module.exports = function({ isDev }) {
       title: 'react hot replace demo',
       appMountId: 'root',
       inject: false,
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': isDev ? '"development"' : '"production"',
+      __DEV__: isDev,
     }),
   ]
 

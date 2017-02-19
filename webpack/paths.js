@@ -4,6 +4,6 @@ const pwd = resolve(__dirname, '../')
 
 module.exports = {
   app: resolve(pwd, 'src'),
-  dist: resolve(pwd, 'dist'),
+  build: resolve(pwd, 'dist'),
 }
 

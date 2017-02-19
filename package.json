@@ -42,6 +42,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config ./webpack",
+    "build": "webpack --env production --config ./webpack",
     "lint": "eslint src"
   }
 }

@@ -1,27 +1,34 @@
 const PATHS = require('./paths')
 const getPlugins = require('./plugins')
+const getRules = require('./rules')
+const devConfig = require('./webpack.dev.js')
+const prodConfig = require('./webpack.prod.js')
 
 module.exports = function(env) {
   const isDev = env !== 'production'
+  console.log(`webpack start isDev:${isDev} env: ${env}`)
 
   const plugins = getPlugins({ isDev })
+  const rules = getRules({ isDev })
 
-  const config = {
-    entry: [
-      'react-hot-loader/patch',
-      // activate HMR for React
+  let config = {
+    entry: {
+      app: [
+        'react-hot-loader/patch',
+        // activate HMR for React
 
-      'webpack-dev-server/client?http://localhost:3000',
-      // bundle the client for webpack-dev-server
-      // and connect to the provided endpoint
+        'webpack-dev-server/client?http://localhost:3000',
+        // bundle the client for webpack-dev-server
+        // and connect to the provided endpoint
 
-      'webpack/hot/only-dev-server',
-      // bundle the client for hot reloading
-      // only- means to only hot reload for successful updates
+        'webpack/hot/only-dev-server',
+        // bundle the client for hot reloading
+        // only- means to only hot reload for successful updates
 
-      PATHS.app,
-      // the entry point of our app
-    ],
+        PATHS.app,
+        // the entry point of our app
+      ],
+    },
 
     output: {
       filename: '[name].js',
@@ -32,32 +39,16 @@ module.exports = function(env) {
       // necessary for HMR to know where to load the hot update chunks
     },
 
-    devtool: 'inline-source-map',
-
     module: {
-      rules: [
-        {
-          test: /\.jsx?$/,
-          use: [
-            'babel-loader',
-          ],
-          exclude: /node_modules/,
-        },
-      ],
+      rules,
     },
 
     plugins,
-
-    devServer: {
-      host: 'localhost',
-      port: 3000,
-
-      historyApiFallback: true,
-      // respond to 404s with index.html
-
-      hot: true,
-      // enable HMR on the server
-    },
+  }
+  if (isDev) {
+    config = Object.assign({}, config, devConfig)
+  } else {
+    config = Object.assign({}, config, prodConfig)
   }
   return config
 }
