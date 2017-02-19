@@ -9,17 +9,16 @@ const bundles = [
   },
 ]
 
-const entry = {}
+const entryNames = {}
 const names = []
 
 bundles.forEach((o) => {
   names.push(o.name)
-  entry[o.name] = o.entry
+  entryNames[o.name] = o.entry
 })
 
 module.exports = {
   names,
   bundles,
-  entry,
+  entryNames,
 }
-

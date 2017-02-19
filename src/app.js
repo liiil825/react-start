@@ -14,7 +14,7 @@ export default function App() {
         onClick={
           () => {}
         }
-      >hello world!</button>
+      >hello, world.</button>
       <br />
       { moment().format('YYYY-MM-DD HH:mm:ss') }
     </div>
