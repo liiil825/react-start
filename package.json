@@ -40,21 +40,6 @@
     "react-dom": "^15.4.2",
     "react-hot-loader": "^3.0.0-beta.2"
   },
-  "babel": {
-    "presets": [
-      [
-        "es2015",
-        {
-          "modules": false
-        }
-      ],
-      "stage-0",
-      "react"
-    ],
-    "plugins": [
-      "react-hot-loader/babel"
-    ]
-  },
   "stylelint": {
     "rules": {
       "color-hex-case": "lower"

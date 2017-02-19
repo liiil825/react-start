@@ -3,7 +3,7 @@ const css = require('./css')
 
 module.exports = function({ isDev }) {
   return [
-    ...javascript(),
+    ...javascript({ isDev }),
     ...css({ isDev }),
   ]
 }

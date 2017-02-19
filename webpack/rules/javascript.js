@@ -1,11 +1,27 @@
 const PATHS = require('../paths')
 
-module.exports = function() {
+module.exports = function({ isDev }) {
   return [
     {
       test: /\.jsx?$/,
 
-      use: ['babel-loader'],
+      loader: 'babel',
+      query: {
+        presets: [
+          [
+            'es2015',
+            {
+              modules: false,
+            },
+          ],
+          'stage-0',
+          'react',
+        ],
+        plugins:
+          isDev ? [
+            'react-hot-loader/babel',
+          ] : [],
+      },
 
       include: PATHS.app,
       exclude: /node_modules/,
