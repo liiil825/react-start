@@ -3,6 +3,7 @@ const getPlugins = require('./plugins')
 const getRules = require('./rules')
 const devConfig = require('./webpack.dev.js')
 const prodConfig = require('./webpack.prod.js')
+const { entry } = require('./vendor')
 
 module.exports = function(env) {
   const isDev = env !== 'production'
@@ -10,25 +11,30 @@ module.exports = function(env) {
 
   const plugins = getPlugins({ isDev })
   const rules = getRules({ isDev })
+  console.log(rules[1])
+
+  if (isDev) {
+    entry.app = [
+      'react-hot-loader/patch',
+      // activate HMR for React
+
+      'webpack-dev-server/client?http://localhost:3000',
+      // bundle the client for webpack-dev-server
+      // and connect to the provided endpoint
+
+      'webpack/hot/only-dev-server',
+      // bundle the client for hot reloading
+      // only- means to only hot reload for successful updates
+
+      PATHS.app,
+      // the entry point of our app
+    ]
+  } else {
+    entry.app = PATHS.app
+  }
 
   let config = {
-    entry: {
-      app: [
-        'react-hot-loader/patch',
-        // activate HMR for React
-
-        'webpack-dev-server/client?http://localhost:3000',
-        // bundle the client for webpack-dev-server
-        // and connect to the provided endpoint
-
-        'webpack/hot/only-dev-server',
-        // bundle the client for hot reloading
-        // only- means to only hot reload for successful updates
-
-        PATHS.app,
-        // the entry point of our app
-      ],
-    },
+    entry,
 
     output: {
       filename: '[name].js',
@@ -44,6 +50,10 @@ module.exports = function(env) {
     },
 
     plugins,
+
+    resolveLoader: {
+      moduleExtensions: ["-loader"],
+    },
   }
   if (isDev) {
     config = Object.assign({}, config, devConfig)
