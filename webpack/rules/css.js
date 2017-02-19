@@ -3,33 +3,50 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const postcssImport = require('postcss-import')
 const postcssCssnext = require('postcss-cssnext')
 const postcssReporter = require('postcss-reporter')
+
 const PATHS = require('../paths')
 const stylelint = require('stylelint')
 
 module.exports = function({ isDev }) {
-  const localIndentName = 'localIdentName=[name]__[local]___[hash:base64:5]'
+  const localIndentName = isDev ? 'localIdentName=[name]__[local]___[hash:base64:5]' : '[hash:8]'
 
-  const createLoader = embedCssInBundle => ([
-    {
-      loader: embedCssInBundle ? 'css' : 'css',
-      options: {
-        localIndentName,
-        sourceMap: true,
-        modules: true,
-        importLoaders: 1,
+  const createLoader = (embedCssInBundle, modules = true) => {
+    const loaders = [
+      {
+        loader: embedCssInBundle ? 'css' : 'css',
+        options: {
+          localIndentName,
+          sourceMap: true,
+          modules,
+          importLoaders: 1,
+        },
       },
-    },
-    {
-      loader: 'postcss',
-      options: {
-        plugins: [
-          postcssImport({ path: resolve(PATHS.app, './css') }),
-          postcssCssnext({ browsers: ['> 1%', 'last 2 versions'] }),
-          postcssReporter({ clearMessages: true }),
-        ],
-      },
-    },
-  ])
+    ]
+
+    if (modules) {
+      loaders.push(
+        {
+          loader: 'postcss',
+          options: {
+            plugins: [
+              postcssImport({
+                path: [
+                  resolve(PATHS.app, './css'),
+                  // resolve(PATHS.pwd, 'node_modules/font-awesome/css'),
+                ],
+              }),
+              postcssCssnext({ browsers: ['> 1%', 'last 2 versions'] }),
+              postcssReporter({ clearMessages: true }),
+            ],
+          },
+        // eslint-disable-next-line
+        }
+      )
+    }
+
+    return loaders
+  }
+
 
   const createBrowserLoaders
     = extractCssToFile => (loaders) => {
@@ -48,6 +65,8 @@ module.exports = function({ isDev }) {
       test: /\.css$/,
 
       use: createBrowserLoaders(!isDev)(createLoader(isDev)),
+
+      include: PATHS.app,
     },
     {
       test: /\.css$/,
@@ -61,8 +80,14 @@ module.exports = function({ isDev }) {
           }),
         ]),
       },
+    },
+    // for font-awesome
+    {
+      test: /\.css$/,
 
-      include: PATHS.app,
+      use: createBrowserLoaders(!isDev)(createLoader(isDev, false)),
+
+      include: /font-awesome/,
     },
   ]
 }

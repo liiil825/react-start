@@ -14,7 +14,10 @@ export default function App() {
         onClick={
           () => {}
         }
-      >hello, world.</button>
+      >hello ,world.</button>
+      <i
+        className="fa fa-hand-spock-o fa-1g"
+      />
       <br />
       { moment().format('YYYY-MM-DD HH:mm:ss') }
     </div>
