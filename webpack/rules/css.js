@@ -4,6 +4,7 @@ const postcssImport = require('postcss-import')
 const postcssCssnext = require('postcss-cssnext')
 const postcssReporter = require('postcss-reporter')
 const PATHS = require('../paths')
+const stylelint = require('stylelint')
 
 module.exports = function({ isDev }) {
   const localIndentName = 'localIdentName=[name]__[local]___[hash:base64:5]'
@@ -42,10 +43,27 @@ module.exports = function({ isDev }) {
       return ['style', ...loaders]
     }
 
-  return {
-    test: /\.css$/,
+  return [
+    {
+      test: /\.css$/,
 
-    use: createBrowserLoaders(!isDev)(createLoader(isDev)),
-  }
+      use: createBrowserLoaders(!isDev)(createLoader(isDev)),
+    },
+    {
+      test: /\.css$/,
+      enforce: 'pre',
+
+      loader: 'postcss',
+      options: {
+        plugins: () => ([
+          stylelint({
+            ignoreFiles: 'node_modules/**/*.css',
+          }),
+        ]),
+      },
+
+      include: PATHS.app,
+    },
+  ]
 }
 
