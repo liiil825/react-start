@@ -11,7 +11,6 @@ module.exports = function(env) {
 
   const plugins = getPlugins({ isDev })
   const rules = getRules({ isDev })
-  console.log(rules[1])
 
   if (isDev) {
     entry.app = [

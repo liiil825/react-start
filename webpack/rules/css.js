@@ -10,7 +10,7 @@ module.exports = function({ isDev }) {
 
   const createLoader = embedCssInBundle => ([
     {
-      loader: embedCssInBundle ? 'css' : 'css-loader/locals',
+      loader: embedCssInBundle ? 'css' : 'css',
       options: {
         localIndentName,
         sourceMap: true,
@@ -33,8 +33,8 @@ module.exports = function({ isDev }) {
   const createBrowserLoaders = extractCssToFile => loaders => {
     if (extractCssToFile) {
       return ExtractTextPlugin.extract({
-        fallback: 'style',
-        use: loaders
+        fallback: 'style-loader',
+        use: loaders,
       });
     }
 

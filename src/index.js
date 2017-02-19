@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './app'
 
-// import 'main.css'
+import './main.css'
 
 const rootEl = document.getElementById('root')
 const render = Component =>
