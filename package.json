@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "hot",
+    "reload",
+    "hmr",
+    "webpack"
+  ],
   "author": "James Lee <40129878@qq.com> (http://www.40129878.com)",
   "license": "ISC",
   "devDependencies": {
