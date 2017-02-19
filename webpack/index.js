@@ -7,6 +7,7 @@ const { entry } = require('./vendor')
 
 module.exports = function(env) {
   const isDev = env !== 'production'
+  // eslint-disable-next-line
   console.log(`webpack start isDev:${isDev} env: ${env}`)
 
   const plugins = getPlugins({ isDev })
@@ -51,7 +52,7 @@ module.exports = function(env) {
     plugins,
 
     resolveLoader: {
-      moduleExtensions: ["-loader"],
+      moduleExtensions: ['-loader'],
     },
   }
   if (isDev) {

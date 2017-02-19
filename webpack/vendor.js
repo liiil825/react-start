@@ -12,7 +12,7 @@ const bundles = [
 const entry = {}
 const names = []
 
-bundles.forEach(o => {
+bundles.forEach((o) => {
   names.push(o.name)
   entry[o.name] = o.entry
 })

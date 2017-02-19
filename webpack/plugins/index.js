@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const template = require('html-webpack-template')
 
 const devPlugin = require('./development.js')
 const prodPlugin = require('./production.js')
@@ -7,7 +8,7 @@ const prodPlugin = require('./production.js')
 module.exports = function({ isDev }) {
   const plugins = [
     new HtmlWebpackPlugin({
-      template: require('html-webpack-template'),
+      template,
       title: 'react hot replace demo',
       appMountId: 'root',
       inject: false,

@@ -1,10 +1,23 @@
+const PATHS = require('../paths')
+
 module.exports = function() {
-  return {
-    test: /\.jsx?$/,
+  return [
+    {
+      test: /\.jsx?$/,
 
-    use: ['babel-loader'],
+      use: ['babel-loader'],
 
-    exclude: /node_modules/,
-  }
+      include: PATHS.app,
+      exclude: /node_modules/,
+    },
+    {
+      test: /\.jsx?$/,
+      enforce: 'pre',
+
+      loader: 'eslint',
+
+      include: PATHS.app,
+    },
+  ]
 }
 

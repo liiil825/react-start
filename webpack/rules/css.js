@@ -15,7 +15,7 @@ module.exports = function({ isDev }) {
         localIndentName,
         sourceMap: true,
         modules: true,
-        importLoaders: 1
+        importLoaders: 1,
       },
     },
     {
@@ -24,22 +24,23 @@ module.exports = function({ isDev }) {
         plugins: [
           postcssImport({ path: resolve(PATHS.app, './css') }),
           postcssCssnext({ browsers: ['> 1%', 'last 2 versions'] }),
-          postcssReporter({ clearMessages: true })
-        ]
-      }
-    }
+          postcssReporter({ clearMessages: true }),
+        ],
+      },
+    },
   ])
 
-  const createBrowserLoaders = extractCssToFile => loaders => {
-    if (extractCssToFile) {
-      return ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: loaders,
-      });
-    }
+  const createBrowserLoaders
+    = extractCssToFile => (loaders) => {
+      if (extractCssToFile) {
+        return ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: loaders,
+        })
+      }
 
-    return ['style', ...loaders]
-  }
+      return ['style', ...loaders]
+    }
 
   return {
     test: /\.css$/,
