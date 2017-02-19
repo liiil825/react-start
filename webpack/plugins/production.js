@@ -6,7 +6,8 @@ module.exports = [
   new webpack.optimize.CommonsChunkPlugin({
     names,
   }),
-  new webpack.optimize.UglifyJsPlugin(),
+  new webpack.optimize.UglifyJsPlugin({
+  }),
   new ExtractTextPlugin('[name]-[hash:8].css'),
 ]
 
