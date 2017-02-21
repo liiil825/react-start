@@ -18,13 +18,17 @@ module.exports = function({ isDev, isBrowser }) {
           'react',
         ],
         plugins:
-          (isDev && isBrowser ) ? [
+          (isDev && isBrowser) ? [
             'react-hot-loader/babel',
             'syntax-dynamic-import',
-          ] : ['syntax-dynamic-import'],
+          ] : [
+            'syntax-dynamic-import',
+          ],
       },
 
-      include: PATHS.app,
+      include: isBrowser
+        ? PATHS.app
+        : PATHS.server,
       exclude: /node_modules/,
     },
     {
@@ -33,7 +37,9 @@ module.exports = function({ isDev, isBrowser }) {
 
       loader: 'eslint',
 
-      include: PATHS.app,
+      include: isBrowser
+        ? PATHS.app
+        : PATHS.server,
     },
   ]
 }

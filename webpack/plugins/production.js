@@ -6,7 +6,7 @@ const {
   serverNames,
 } = require('../vendor')
 
-module.exports = function({ isDev, isBrowser }) {
+module.exports = function({ isBrowser }) {
   const plugins = []
 
   if (isBrowser) {
@@ -16,9 +16,10 @@ module.exports = function({ isDev, isBrowser }) {
       }),
       new ExtractTextPlugin(
         '[name]-[hash:8].css'
+      ),
+      new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/)
       )
-    )
-  } else {
+  } else if (serverNames.length) {
     plugins.push(
       new webpack.optimize.CommonsChunkPlugin({
         names: serverNames,
@@ -26,9 +27,7 @@ module.exports = function({ isDev, isBrowser }) {
     )
   }
   plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-    }),
-    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/)
+    new webpack.optimize.UglifyJsPlugin()
   )
   return plugins
 }

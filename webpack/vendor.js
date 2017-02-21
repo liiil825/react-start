@@ -8,12 +8,7 @@ const clientBundles = [
     entry: 'moment',
   },
 ]
-const serverBundles = [
-  {
-    name: 'vendor',
-    entry: ['lodash'],
-  },
-]
+const serverBundles = []
 
 const clicentNames = []
 const clientEntryNames = {}
@@ -37,3 +32,4 @@ module.exports = {
   serverBundles,
   serverEntryNames,
 }
+

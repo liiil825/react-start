@@ -28,16 +28,19 @@
     "react/jsx-filename-extension": [
       1, { "extensions": [".js", ".jsx"] },
     ],
+    "comma-dangle": ["error", {
+      "arrays": "only-multiline",
+      "objects": "only-multiline",
+      "imports": "only-multiline",
+      "exports": "only-multiline",
+      "functions": "only-multiline",
+    }],
     "func-names": ["error", "never"],
-    "import/no-extraneous-dependencies": [
-      "error", {
-        "devDependencies": [
-          "**/*.test.js",
-          "**/*.spec.js",
-          "webpack/**/*.js",
-        ]
-      },
-    ],
+    "no-param-reassign": ["error", {
+      "props": false,
+    }],
+    "import/no-extraneous-dependencies": [0],
+    "import/no-unresolved": [0],
     "space-before-function-paren": ["error", "never"]
   }
 }

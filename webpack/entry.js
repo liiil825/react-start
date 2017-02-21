@@ -29,7 +29,7 @@ module.exports = function({
       // the entry point of our app
     ]
   } else if (!isBrowser) {
-    entry.server = PATHS.server
+    entry.server = ['babel-polyfill', PATHS.server]
   } else {
     entry.app = PATHS.app
   }
