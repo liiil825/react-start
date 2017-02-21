@@ -6,13 +6,16 @@ const prodConfig = require('./webpack.prod.js')
 const getEntry = require('./entry')
 
 module.exports = function(env) {
-  const isDev = env !== 'production'
-  // eslint-disable-next-line
-  console.log(`webpack start isDev:${isDev} env: ${env}`)
+  const isDev = process.env.NODE_ENV !== 'production'
+  const isBrowser = env !== 'browser'
+  process.env.DEBUG = isDev
 
-  const plugins = getPlugins({ isDev })
-  const rules = getRules({ isDev })
-  const entry = getEntry({ isDev })
+  // eslint-disable-next-line
+  console.log(`webpack start isDev:${isDev} process.env.NODE_ENV: ${process.env.NODE_ENV}`)
+
+  const plugins = getPlugins({ isDev, isBrowser })
+  const rules = getRules({ isDev, isBrowser })
+  const entry = getEntry({ isDev, isBrowser })
 
   let config = {
     entry,

@@ -6,5 +6,6 @@ module.exports = {
   pwd,
   app: resolve(pwd, 'src'),
   build: resolve(pwd, 'dist'),
+  server: resolve(pwd, 'server'),
 }
 

@@ -1,24 +1,39 @@
-const bundles = [
+const clientBundles = [
   {
     name: 'vendor',
-    entry: ['react', 'react-dom', 'moment'],
+    entry: ['react', 'react-dom', 'lodash', 'moment'],
   },
   {
     name: 'moment',
     entry: 'moment',
   },
 ]
+const serverBundles = [
+  {
+    name: 'vendor',
+    entry: ['lodash'],
+  },
+]
 
-const entryNames = {}
-const names = []
+const clicentNames = []
+const clientEntryNames = {}
+clientBundles.forEach((o) => {
+  clicentNames.push(o.name)
+  if (o.entry) clientEntryNames[o.name] = o.entry
+})
 
-bundles.forEach((o) => {
-  names.push(o.name)
-  if (o.entry) entryNames[o.name] = o.entry
+const serverNames = []
+const serverEntryNames = {}
+serverBundles.forEach((o) => {
+  serverNames.push(o.name)
+  if (o.entry) serverEntryNames[o.name] = o.entry
 })
 
 module.exports = {
-  names,
-  bundles,
-  entryNames,
+  clicentNames,
+  clientBundles,
+  clientEntryNames,
+  serverNames,
+  serverBundles,
+  serverEntryNames,
 }

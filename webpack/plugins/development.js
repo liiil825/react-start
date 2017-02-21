@@ -1,10 +1,16 @@
 const webpack = require('webpack')
 
-module.exports = [
-  new webpack.HotModuleReplacementPlugin(),
-  // enable HMR globally
+module.exports = function({ isDev, isBrowser }) {
+  const plugins = []
 
-  new webpack.NamedModulesPlugin(),
-  // prints more readable module names in the browser console on HMR updates
-]
+  if (isBrowser) {
+    plugins.push(
+      new webpack.HotModuleReplacementPlugin()
+    )
+  }
+  plugins.push(
+    new webpack.NamedModulesPlugin()
+  )
+  return plugins
+}
 

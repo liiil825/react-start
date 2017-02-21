@@ -1,6 +1,6 @@
 const PATHS = require('../paths')
 
-module.exports = function({ isDev }) {
+module.exports = function({ isDev, isBrowser }) {
   return [
     {
       test: /\.jsx?$/,
@@ -18,7 +18,7 @@ module.exports = function({ isDev }) {
           'react',
         ],
         plugins:
-          isDev ? [
+          (isDev && isBrowser ) ? [
             'react-hot-loader/babel',
             'syntax-dynamic-import',
           ] : ['syntax-dynamic-import'],

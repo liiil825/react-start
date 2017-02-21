@@ -1,10 +1,18 @@
 const PATHS = require('./paths')
-const { entryNames } = require('./vendor')
+const { clientEntryNames, serverEntryNames } = require('./vendor')
 
-module.exports = function({ isDev = false } = {}) {
-  const entry = Object.assign({}, entryNames)
+module.exports = function({
+  isDev = false,
+  isBrowser = false,
+} = {}) {
+  let entry = {}
+  if (isBrowser) {
+    entry = Object.assign({}, clientEntryNames)
+  } else {
+    entry = Object.assign({}, serverEntryNames)
+  }
 
-  if (isDev) {
+  if (isDev && isBrowser) {
     entry.app = [
       'react-hot-loader/patch',
       // activate HMR for React
@@ -20,6 +28,8 @@ module.exports = function({ isDev = false } = {}) {
       PATHS.app,
       // the entry point of our app
     ]
+  } else if (!isBrowser) {
+    entry.server = PATHS.server
   } else {
     entry.app = PATHS.app
   }

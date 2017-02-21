@@ -19,7 +19,7 @@ export default function App() {
         className="fa fa-hand-spock-o fa-1g"
       />
       <br />
-      { moment().format('ddd lll') }
+      { moment().format('dddd lll') }
     </div>
   )
 }
