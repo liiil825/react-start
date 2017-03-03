@@ -14,6 +14,8 @@ module.exports = function({
 
   if (isDev && isBrowser) {
     entry.app = [
+      'babel-polyfill',
+
       'react-hot-loader/patch',
       // activate HMR for React
 
@@ -31,7 +33,7 @@ module.exports = function({
   } else if (!isBrowser) {
     entry.server = ['babel-polyfill', PATHS.server]
   } else {
-    entry.app = PATHS.app
+    entry.app = ['babel-polyfill', PATHS.app]
   }
 
   return entry

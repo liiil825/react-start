@@ -102,6 +102,13 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
+aphrodite@^0.2.0:
+  version "0.2.0"
+  resolved "http://r.cnpmjs.org/aphrodite/download/aphrodite-0.2.0.tgz#0f9314ce6c23891b7648d14951e233f38ff88eeb"
+  dependencies:
+    asap "^2.0.3"
+    inline-style-prefixer Khan/inline-style-prefixer#f41f3040ac27eeec3b7a1fb7450ddce250cac4e4
+
 aproba@^1.0.3:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.1.1.tgz#95d3600f07710aa0e9298c726ad5ecf2eacbabab"
@@ -172,7 +179,7 @@ arrify@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-asap@~2.0.3:
+asap@^2.0.3, asap@~2.0.3:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.5.tgz#522765b50c3510490e52d7dcfe085ef9ba96958f"
 
@@ -794,6 +801,12 @@ babel-plugin-transform-regenerator@^6.22.0:
   dependencies:
     regenerator-transform "0.9.8"
 
+babel-plugin-transform-runtime@^6.5.0:
+  version "6.23.0"
+  resolved "http://r.cnpmjs.org/babel-plugin-transform-runtime/download/babel-plugin-transform-runtime-6.23.0.tgz#88490d446502ea9b8e7efb0fe09ec4d99479b1ee"
+  dependencies:
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-strict-mode@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-strict-mode/-/babel-plugin-transform-strict-mode-6.22.0.tgz#e008df01340fdc87e959da65991b7e05970c8c7c"
@@ -803,7 +816,11 @@ babel-plugin-transform-strict-mode@^6.22.0:
 
 babel-polyfill@^6.23.0:
   version "6.23.0"
+<<<<<<< Updated upstream
   resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.23.0.tgz#8364ca62df8eafb830499f699177466c3b03499d"
+=======
+  resolved "http://r.cnpmjs.org/babel-polyfill/download/babel-polyfill-6.23.0.tgz#8364ca62df8eafb830499f699177466c3b03499d"
+>>>>>>> Stashed changes
   dependencies:
     babel-runtime "^6.22.0"
     core-js "^2.4.0"
@@ -902,7 +919,7 @@ babel-register@^6.23.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@^6.18.0, babel-runtime@^6.22.0:
+babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.3.13:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
@@ -1003,6 +1020,10 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
+
+bowser@^1.0.0:
+  version "1.6.0"
+  resolved "http://r.cnpmjs.org/bowser/download/bowser-1.6.0.tgz#37fc387b616cb6aef370dab4d6bd402b74c5c54d"
 
 brace-expansion@^1.0.0:
   version "1.1.6"
@@ -1680,9 +1701,15 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
+<<<<<<< Updated upstream
 deep-equal@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
+=======
+deep-diff@^0.3.2:
+  version "0.3.4"
+  resolved "http://r.cnpmjs.org/deep-diff/download/deep-diff-0.3.4.tgz#aac5c39952236abe5f037a2349060ba01b00ae48"
+>>>>>>> Stashed changes
 
 deep-extend@~0.4.0:
   version "0.4.1"
@@ -2606,6 +2633,10 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
+hoist-non-react-statics@^1.0.3:
+  version "1.2.0"
+  resolved "http://r.cnpmjs.org/hoist-non-react-statics/download/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -2745,6 +2776,10 @@ ignore@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.2.tgz#1c51e1ef53bab6ddc15db4d9ac4ec139eceb3410"
 
+immutable@^3.7.6:
+  version "3.8.1"
+  resolved "http://r.cnpmjs.org/immutable/download/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
+
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
@@ -2782,6 +2817,12 @@ ini@~1.3.0:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
 
+inline-style-prefixer@Khan/inline-style-prefixer#f41f3040ac27eeec3b7a1fb7450ddce250cac4e4:
+  version "0.6.7"
+  resolved "https://codeload.github.com/Khan/inline-style-prefixer/tar.gz/f41f3040ac27eeec3b7a1fb7450ddce250cac4e4"
+  dependencies:
+    bowser "^1.0.0"
+
 inquirer@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-0.12.0.tgz#1ef2bfd63504df0bc75785fff8c2c41df12f077e"
@@ -2804,7 +2845,7 @@ interpret@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.1.tgz#d579fb7f693b858004947af39fa0db49f795602c"
 
-invariant@^2.2.0:
+invariant@^2.0.0, invariant@^2.2.0:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
@@ -3263,6 +3304,14 @@ loader-utils@0.2.x, loader-utils@^0.2.16, loader-utils@^0.2.7, loader-utils@~0.2
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
+lodash-es@^4.2.0, lodash-es@^4.2.1:
+  version "4.17.4"
+  resolved "http://r.cnpmjs.org/lodash-es/download/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
+
+lodash._getnative@^3.0.0:
+  version "3.9.1"
+  resolved "http://r.cnpmjs.org/lodash._getnative/download/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
+
 lodash._reinterpolate@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
@@ -3274,6 +3323,12 @@ lodash.camelcase@^4.3.0:
 lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
+
+lodash.debounce@^3.1.1:
+  version "3.1.1"
+  resolved "http://r.cnpmjs.org/lodash.debounce/download/lodash.debounce-3.1.1.tgz#812211c378a94cc29d5aa4e3346cf0bfce3a7df5"
+  dependencies:
+    lodash._getnative "^3.0.0"
 
 lodash.memoize@^4.1.0:
   version "4.1.2"
@@ -3300,7 +3355,7 @@ lodash.uniq@^4.3.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.0.0, lodash@^4.1.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
+lodash@^4.0.0, lodash@^4.1.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3634,6 +3689,10 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
+object-assign@^2.0.0:
+  version "2.1.1"
+  resolved "http://r.cnpmjs.org/object-assign/download/object-assign-2.1.1.tgz#43c36e5d569ff8e4816c4efa8be02d26967c18aa"
+
 object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -3774,7 +3833,15 @@ parse-json@^2.2.0:
   dependencies:
     error-ex "^1.2.0"
 
+<<<<<<< Updated upstream
 parseurl@^1.3.0, parseurl@~1.3.1:
+=======
+parse-key@^0.2.1:
+  version "0.2.1"
+  resolved "http://r.cnpmjs.org/parse-key/download/parse-key-0.2.1.tgz#7bcf76595536e36075664be4d687e4bdd910208f"
+
+parseurl@~1.3.1:
+>>>>>>> Stashed changes
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.1.tgz#c8ab8c9223ba34888aa64a297b28853bec18da56"
 
@@ -4542,6 +4609,13 @@ react-deep-force-update@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-2.0.1.tgz#4f7f6c12c3e7de42f345992a3c518236fa1ecad3"
 
+react-dock@^0.2.1:
+  version "0.2.3"
+  resolved "http://r.cnpmjs.org/react-dock/download/react-dock-0.2.3.tgz#a25461564f3cf64ab5b7098e7546036066a9c0e2"
+  dependencies:
+    lodash.debounce "^3.1.1"
+    object-assign "^4.0.1"
+
 react-dom@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.2.tgz#015363f05b0a1fd52ae9efdd3a0060d90695208f"
@@ -4561,11 +4635,41 @@ react-hot-loader@^3.0.0-beta.2:
     redbox-react "^1.2.5"
     source-map "^0.4.4"
 
+react-json-tree@^0.6.5:
+  version "0.6.8"
+  resolved "http://r.cnpmjs.org/react-json-tree/download/react-json-tree-0.6.8.tgz#e844f431f759c94c55783556300844fb3b35e623"
+  dependencies:
+    babel-plugin-transform-runtime "^6.5.0"
+    babel-runtime "^6.3.13"
+    react-mixin "^1.7.0"
+    react-pure-render "^1.0.2"
+
+react-mixin@^1.7.0:
+  version "1.7.0"
+  resolved "http://r.cnpmjs.org/react-mixin/download/react-mixin-1.7.0.tgz#38c22c3eb02064f08f2c25878a60dac3e956f44c"
+  dependencies:
+    object-assign "^2.0.0"
+    smart-mixin "^1.2.0"
+
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
   dependencies:
     lodash "^4.6.1"
+
+react-pure-render@^1.0.2:
+  version "1.0.2"
+  resolved "http://r.cnpmjs.org/react-pure-render/download/react-pure-render-1.0.2.tgz#9d8a928c7f2c37513c2d064e57b3e3c356e9fabb"
+
+react-redux@^5.0.3:
+  version "5.0.3"
+  resolved "http://r.cnpmjs.org/react-redux/download/react-redux-5.0.3.tgz#86c3b68d56e74294a42e2a740ab66117ef6c019f"
+  dependencies:
+    hoist-non-react-statics "^1.0.3"
+    invariant "^2.0.0"
+    lodash "^4.2.0"
+    lodash-es "^4.2.0"
+    loose-envify "^1.1.0"
 
 react@^15.4.2:
   version "15.4.2"
@@ -4694,6 +4798,51 @@ reduce-function-call@^1.0.1:
   resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
+
+redux-devtools-diff-monitor@^5.0.5:
+  version "5.0.5"
+  resolved "http://r.cnpmjs.org/redux-devtools-diff-monitor/download/redux-devtools-diff-monitor-5.0.5.tgz#4c27f4b52f5ed925856ffb2ad86954232ddd9b74"
+  dependencies:
+    aphrodite "^0.2.0"
+    deep-diff "^0.3.2"
+    immutable "^3.7.6"
+    react-json-tree "^0.6.5"
+
+redux-devtools-dock-monitor@^1.1.1:
+  version "1.1.1"
+  resolved "http://r.cnpmjs.org/redux-devtools-dock-monitor/download/redux-devtools-dock-monitor-1.1.1.tgz#6ef4ff5a7c42f5d7fa39c34859a8f4eb4dee9947"
+  dependencies:
+    babel-runtime "^6.2.0"
+    parse-key "^0.2.1"
+    react-dock "^0.2.1"
+    react-pure-render "^1.0.2"
+
+redux-devtools-instrument@^1.0.1:
+  version "1.8.0"
+  resolved "http://r.cnpmjs.org/redux-devtools-instrument/download/redux-devtools-instrument-1.8.0.tgz#db1840ed3d8152af6792913698e3424c119de9aa"
+  dependencies:
+    lodash "^4.2.0"
+    symbol-observable "^1.0.2"
+
+redux-devtools@^3.3.2:
+  version "3.3.2"
+  resolved "http://r.cnpmjs.org/redux-devtools/download/redux-devtools-3.3.2.tgz#f427f71964e2b3785b68834b6e4fe99d8da75b5e"
+  dependencies:
+    lodash "^4.2.0"
+    redux-devtools-instrument "^1.0.1"
+
+redux-saga@^0.14.3:
+  version "0.14.3"
+  resolved "http://r.cnpmjs.org/redux-saga/download/redux-saga-0.14.3.tgz#28cd2c5b49cf780a1de25875765724150c630513"
+
+redux@^3.6.0:
+  version "3.6.0"
+  resolved "http://r.cnpmjs.org/redux/download/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
+  dependencies:
+    lodash "^4.2.1"
+    lodash-es "^4.2.1"
+    loose-envify "^1.1.0"
+    symbol-observable "^1.0.2"
 
 regenerate@^1.2.1:
   version "1.3.2"
@@ -4978,6 +5127,10 @@ slash@^1.0.0:
 slice-ansi@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
+
+smart-mixin@^1.2.0:
+  version "1.2.1"
+  resolved "http://r.cnpmjs.org/smart-mixin/download/smart-mixin-1.2.1.tgz#11a2b3e4628dfee16ac9cb51edd301be21be1452"
 
 sntp@1.x.x:
   version "1.0.9"
@@ -5273,6 +5426,10 @@ svgo@^0.7.0:
     mkdirp "~0.5.1"
     sax "~1.2.1"
     whet.extend "~0.9.9"
+
+symbol-observable@^1.0.2:
+  version "1.0.4"
+  resolved "http://r.cnpmjs.org/symbol-observable/download/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
 synesthesia@^1.0.1:
   version "1.0.1"
