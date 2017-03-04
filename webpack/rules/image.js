@@ -12,16 +12,18 @@ module.exports = function({ isDev }) {
     {
       test: /\.(ico|jpg|jpeg|png|gif|otf|webp|)(\?.*)?$/,
 
-      loader: 'file',
-      query: {
-        name: isDev ? '[path][name].[ext]?[hash:8]' : '[hash:8].[ext]',
+      use: {
+        loader: 'file',
+        options: {
+          name: isDev ? '[path][name].[ext]?[hash:8]' : '[hash:8].[ext]',
+        },
       },
     },
     // Disabling SVG Font Loading
     {
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
 
-      loader: 'null',
+      use: 'null',
 
       include: /font-awesome/,
     },

@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { PropTypes } from 'react'
 import { Provider } from 'react-redux'
+
 import Counter from '../../modules/counter/components'
 
 export default function root({ store }) {
@@ -9,7 +10,7 @@ export default function root({ store }) {
     <Provider store={store}>
       <div>
         <Counter
-          value={store.getState()}
+          value={store.getState().counters.value}
           onIncrement={() => action('INCREMENT')}
           onDecrement={() => action('DECREMENT')}
           onIncrementIfOdd={() => action('INCREMENT_IF_ODD')}
@@ -18,5 +19,9 @@ export default function root({ store }) {
       </div>
     </Provider>
   )
+}
+
+root.propTypes = {
+  store: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 }
 

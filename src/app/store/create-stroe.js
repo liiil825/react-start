@@ -1,8 +1,8 @@
 /* eslint-disable */
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./create-store-prod')
+  module.exports = require('./create-store.prod')
 } else {
-  module.exports = require('./create-store-dev')
+  module.exports = require('./create-store.dev')
 }
 /* eslint-enable */
 

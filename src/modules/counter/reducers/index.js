@@ -1,12 +1,23 @@
-export default function counter(state = 0, action) {
+const initState = {
+  value: 0,
+}
+
+export default function counter(state = initState, action) {
   switch (action.type) {
     case 'INCREMENT':
-      return state + 1
+      return {
+        value: state.value + 1,
+      }
     case 'INCREMENT_IF_ODD':
-      return (state % 2 !== 0) ? state + 1 : state
+      return (state.value % 2 !== 0) ? {
+        value: state.value + 1,
+      } : state
     case 'DECREMENT':
-      return state - 1
+      return {
+        value: state.value - 1
+      }
     default:
       return state
   }
 }
+

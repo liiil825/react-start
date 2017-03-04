@@ -23,7 +23,7 @@ module.exports = function(env) {
     entry,
 
     output: {
-      filename: '[name].[hash:8].js',
+      filename: '[name].js',
       // the output bundle
 
       path: PATHS.build,

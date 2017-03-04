@@ -32,7 +32,6 @@ module.exports = function({ isDev }) {
               postcssImport({
                 path: [
                   resolve(PATHS.app, './css'),
-                  // resolve(PATHS.pwd, 'node_modules/font-awesome/css'),
                 ],
               }),
               postcssCssnext({ browsers: ['> 1%', 'last 2 versions'] }),

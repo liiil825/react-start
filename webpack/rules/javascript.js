@@ -5,25 +5,24 @@ module.exports = function({ isDev, isBrowser }) {
     {
       test: /\.jsx?$/,
 
-      loader: 'babel',
-      query: {
-        presets: [
-          [
-            'es2015',
-            {
-              modules: false,
-            },
+      use: {
+        loader: 'babel',
+        options: {
+          presets: [
+            [
+              'es2015',
+              {
+                modules: false,
+              },
+            ],
+            'stage-0',
+            'react',
           ],
-          'stage-0',
-          'react',
-        ],
-        plugins:
-          (isDev && isBrowser) ? [
-            'react-hot-loader/babel',
-            'syntax-dynamic-import',
-          ] : [
-            'syntax-dynamic-import',
-          ],
+          plugins:
+            (isDev && isBrowser) ? [
+              'react-hot-loader/babel',
+            ] : [],
+        },
       },
 
       include: isBrowser

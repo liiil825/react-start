@@ -9,7 +9,7 @@ export default function rootDev({ store }) {
     <Provider store={store}>
       <div>
         <Counter
-          value={store.getState()}
+          value={store.getState().counters.value}
           onIncrement={() => action('INCREMENT')}
           onDecrement={() => action('DECREMENT')}
           onIncrementIfOdd={() => action('INCREMENT_IF_ODD')}
