@@ -19,7 +19,6 @@ const Counter = ({ value, onIncrement, onIncrementAsync, onDecrement, onIncremen
     <button onClick={onIncrementAsync}>
       Increment async
     </button>
-    hello world !!
   </p>
 
 Counter.propTypes = {

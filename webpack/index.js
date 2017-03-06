@@ -9,6 +9,7 @@ const getCommon = require('./common')
 module.exports = function(env) {
   const isDev = process.env.NODE_ENV !== 'production'
   const isBrowser = env === 'browser'
+  process.env.IS_BROWSER = isBrowser
   process.env.DEBUG = isDev
 
   // eslint-disable-next-line

@@ -2236,6 +2236,10 @@ execall@^1.0.0:
   dependencies:
     clone-regexp "^1.0.0"
 
+exenv@^1.2.1:
+  version "1.2.1"
+  resolved "http://registry.npm.taobao.org/exenv/download/exenv-1.2.1.tgz#75de1c8dee02e952b102aa17f8875973e0df14f9"
+
 exit-hook@^1.0.0:
   version "1.1.1"
   resolved "http://r.cnpmjs.org/exit-hook/download/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
@@ -2673,6 +2677,16 @@ hex-rgba@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/hex-rgba/download/hex-rgba-1.0.0.tgz#b844adb0a9d9249873591df290231a176a1b36a0"
 
+history@^4.5.1:
+  version "4.5.1"
+  resolved "http://registry.npm.taobao.org/history/download/history-4.5.1.tgz#44935a51021e3b8e67ebac267a35675732aba569"
+  dependencies:
+    invariant "^2.2.1"
+    loose-envify "^1.2.0"
+    resolve-pathname "^2.0.0"
+    value-equal "^0.2.0"
+    warning "^3.0.0"
+
 hmac-drbg@^1.0.0:
   version "1.0.0"
   resolved "http://r.cnpmjs.org/hmac-drbg/download/hmac-drbg-1.0.0.tgz#3db471f45aae4a994a0688322171f51b8b91bee5"
@@ -2904,7 +2918,7 @@ interpret@^1.0.0:
   version "1.0.1"
   resolved "http://r.cnpmjs.org/interpret/download/interpret-1.0.1.tgz#d579fb7f693b858004947af39fa0db49f795602c"
 
-invariant@^2.0.0, invariant@^2.2.0:
+invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
   version "2.2.2"
   resolved "http://r.cnpmjs.org/invariant/download/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
@@ -3443,6 +3457,22 @@ lodash.flow@^3.3.0:
   version "3.5.0"
   resolved "http://registry.npm.taobao.org/lodash.flow/download/lodash.flow-3.5.0.tgz#87bf40292b8cf83e4e8ce1a3ae4209e20071675a"
 
+lodash.isarguments@^3.0.0:
+  version "3.1.0"
+  resolved "http://registry.npm.taobao.org/lodash.isarguments/download/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
+
+lodash.isarray@^3.0.0:
+  version "3.0.4"
+  resolved "http://registry.npm.taobao.org/lodash.isarray/download/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
+
+lodash.keys@^3.1.2:
+  version "3.1.2"
+  resolved "http://registry.npm.taobao.org/lodash.keys/download/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
+  dependencies:
+    lodash._getnative "^3.0.0"
+    lodash.isarguments "^3.0.0"
+    lodash.isarray "^3.0.0"
+
 lodash.memoize@^4.1.0:
   version "4.1.2"
   resolved "http://r.cnpmjs.org/lodash.memoize/download/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -3482,7 +3512,7 @@ longest@^1.0.1:
   version "1.0.1"
   resolved "http://r.cnpmjs.org/longest/download/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
 
-loose-envify@^1.0.0, loose-envify@^1.1.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1:
   version "1.3.1"
   resolved "http://r.cnpmjs.org/loose-envify/download/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
   dependencies:
@@ -3991,6 +4021,12 @@ path-parse@^1.0.5:
 path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "http://r.cnpmjs.org/path-to-regexp/download/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
+
+path-to-regexp@^1.5.3:
+  version "1.7.0"
+  resolved "http://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-1.7.0.tgz#59fde0f435badacba103a84e9d3bc64e96b9937d"
+  dependencies:
+    isarray "0.0.1"
 
 path-type@^1.0.0:
   version "1.1.0"
@@ -4751,6 +4787,12 @@ react-dock@^0.2.1:
     lodash.debounce "^3.1.1"
     object-assign "^4.0.1"
 
+react-document-meta@^2.1.1:
+  version "2.1.1"
+  resolved "http://registry.npm.taobao.org/react-document-meta/download/react-document-meta-2.1.1.tgz#f7398b10f062a3a74b91c4d8c8853e715126e4cb"
+  dependencies:
+    react-side-effect "^1.0.1"
+
 react-dom@^15.4.2:
   version "15.4.2"
   resolved "http://r.cnpmjs.org/react-dom/download/react-dom-15.4.2.tgz#015363f05b0a1fd52ae9efdd3a0060d90695208f"
@@ -4797,6 +4839,38 @@ react-redux@^5.0.3:
     lodash "^4.2.0"
     lodash-es "^4.2.0"
     loose-envify "^1.1.0"
+
+react-router-addons-routes@^0.0.3:
+  version "0.0.3"
+  resolved "http://registry.npm.taobao.org/react-router-addons-routes/download/react-router-addons-routes-0.0.3.tgz#563ac20d1f45fdca99fa98199bdfac2ec33dd3ac"
+
+react-router-dom@next:
+  version "4.0.0-beta.7"
+  resolved "http://registry.npm.taobao.org/react-router-dom/download/react-router-dom-4.0.0-beta.7.tgz#3eeea51407efe91e4e28c49fcd486dfc0f9341dc"
+  dependencies:
+    history "^4.5.1"
+    react-router "^4.0.0-beta.7"
+
+react-router-redux@^4.0.8:
+  version "4.0.8"
+  resolved "http://registry.npm.taobao.org/react-router-redux/download/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
+
+react-router@^4.0.0-5, react-router@^4.0.0-beta.7:
+  version "4.0.0-beta.7"
+  resolved "http://registry.npm.taobao.org/react-router/download/react-router-4.0.0-beta.7.tgz#e82931139ed26a99cd5251e2cf2a7b47daceb483"
+  dependencies:
+    history "^4.5.1"
+    invariant "^2.2.2"
+    loose-envify "^1.3.1"
+    path-to-regexp "^1.5.3"
+    warning "^3.0.0"
+
+react-side-effect@^1.0.1:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/react-side-effect/download/react-side-effect-1.1.0.tgz#57209f7ebc940d55e0fda82fe51422654175d609"
+  dependencies:
+    exenv "^1.2.1"
+    shallowequal "^0.2.2"
 
 react@^15.4.2:
   version "15.4.2"
@@ -5127,6 +5201,10 @@ resolve-path@^1.3.1:
     http-errors "~1.5.0"
     path-is-absolute "1.0.1"
 
+resolve-pathname@^2.0.0:
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/resolve-pathname/download/resolve-pathname-2.0.2.tgz#e55c016eb2e9df1de98e85002282bfb38c630436"
+
 resolve@^1.1.6, resolve@^1.1.7:
   version "1.3.2"
   resolved "http://r.cnpmjs.org/resolve/download/resolve-1.3.2.tgz#1f0442c9e0cbb8136e87b9305f932f46c7f28235"
@@ -5256,6 +5334,12 @@ sha.js@^2.3.6:
   resolved "http://r.cnpmjs.org/sha.js/download/sha.js-2.4.8.tgz#37068c2c476b6baf402d14a49c67f597921f634f"
   dependencies:
     inherits "^2.0.1"
+
+shallowequal@^0.2.2:
+  version "0.2.2"
+  resolved "http://registry.npm.taobao.org/shallowequal/download/shallowequal-0.2.2.tgz#1e32fd5bcab6ad688a4812cb0cc04efc75c7014e"
+  dependencies:
+    lodash.keys "^3.1.2"
 
 shelljs@^0.7.5:
   version "0.7.6"
@@ -5851,6 +5935,10 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
+
+value-equal@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/value-equal/download/value-equal-0.2.0.tgz#4f41c60a3fc011139a2ec3d3340a8998ae8b69c0"
 
 vary@^1.0.0, vary@~1.1.0:
   version "1.1.0"

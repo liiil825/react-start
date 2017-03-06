@@ -1,27 +1,25 @@
 import React, { PropTypes } from 'react'
 import { Provider } from 'react-redux'
-import Counter from '../../modules/counter/components'
+import debug from 'debug'
+
+import { makeRoutes } from '../../routes'
 import DevTools from './dev-tools'
 
-export default function rootDev({ store }) {
-  const action = type => store.dispatch({ type })
+const isBrowser = process.env.IS_BROWSER === 'true'
+debug('Root:isBrowser?:', isBrowser)
+
+export default function RootDev({ store }) {
   return (
     <Provider store={store}>
       <div>
-        <Counter
-          value={store.getState().counters.value}
-          onIncrement={() => action('INCREMENT')}
-          onDecrement={() => action('DECREMENT')}
-          onIncrementIfOdd={() => action('INCREMENT_IF_ODD')}
-          onIncrementAsync={() => action('INCREMENT_ASYNC')}
-        />
+        {makeRoutes()}
         <DevTools />
       </div>
     </Provider>
   )
 }
 
-rootDev.propTypes = {
-  store: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+RootDev.propTypes = {
+  store: PropTypes.object.isRequired,
 }
 
