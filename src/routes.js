@@ -1,7 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import {
-  BrowserRouter,
-  StaticRouter,
   Route,
   Link,
   Switch,
@@ -12,8 +10,6 @@ import debug from 'debug'
 import Homepage from './modules/homepage/containers'
 import Counter from './modules/counter/containers/'
 import NotFound from './modules/not-found/containers'
-
-import { isBrowser } from './config/env'
 
 debug(':routes')
 
@@ -33,40 +29,28 @@ export const routes = [
   }
 ]
 
-export function makeRoutes({
-  location,
-}) {
-  const Router = isBrowser ? BrowserRouter : StaticRouter
+export function makeRoutes() {
   return (
-    <Router
-      location={location}
-      context={{}}
-    >
-      <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/count">count</Link></li>
-        </ul>
-        <Switch>
-          {
-            routes.map(
-              route => (
-                <Route
-                  key={route.name}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.component}
-                />
-              )
+    <div>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/count">count</Link></li>
+      </ul>
+      <Switch>
+        {
+          routes.map(
+            route => (
+              <Route
+                key={route.name}
+                path={route.path}
+                exact={route.exact}
+                component={route.component}
+              />
             )
-          }
-          <Route component={NotFound} />
-        </Switch>
-      </div>
-    </Router>
+          )
+        }
+        <Route component={NotFound} />
+      </Switch>
+    </div>
   )
 }
-makeRoutes.propTypes = {
-  location: PropTypes.string,
-}
-

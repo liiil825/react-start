@@ -12,4 +12,3 @@ module.exports = {
     // enable HMR on the server
   },
 }
-

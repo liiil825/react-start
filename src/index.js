@@ -24,4 +24,3 @@ store.subscribe(render)
 if (isDev && module.hot) {
   module.hot.accept('./app/containers/root', () => render(Root))
 }
-

@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import { Provider } from 'react-redux'
 import debug from 'debug'
 
+import { BrowserRouter as Router } from 'react-router-dom'
+
 import { makeRoutes } from '../../routes'
 import DevTools from './dev-tools'
 
@@ -12,7 +14,9 @@ export default function RootDev({ store }) {
   return (
     <Provider store={store}>
       <div>
-        {makeRoutes()}
+        <Router>
+          {makeRoutes()}
+        </Router>
         <DevTools />
       </div>
     </Provider>
@@ -22,4 +26,3 @@ export default function RootDev({ store }) {
 RootDev.propTypes = {
   store: PropTypes.object.isRequired,
 }
-

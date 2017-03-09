@@ -51,4 +51,3 @@ module.exports = function(env) {
   }
   return config
 }
-

@@ -3,6 +3,8 @@ import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
 import matchPath from 'react-router-dom/matchPath'
 
+import { StaticRouter as Router } from 'react-router-dom'
+
 import configureStore from '../../app/store/create-store'
 import { makeRoutes, routes } from '../../routes'
 
@@ -24,9 +26,14 @@ function Markup({
 }) {
   return (
     <Provider store={store}>
-      {makeRoutes(
-        location,
-      )}
+      <Router
+        location={location}
+        context={{}}
+      >
+        {makeRoutes(
+          location,
+        )}
+      </Router>
     </Provider>
   )
 }
@@ -68,4 +75,3 @@ export default function setRouterContext() {
     await next()
   }
 }
-
