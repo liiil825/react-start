@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import Root from './app/containers/root'
 import AppContainer from './app/containers/hmr-container'
-import createStore from './app/store/create-stroe'
+import createStore from './app/store/create-store'
 
 const store = createStore()
 

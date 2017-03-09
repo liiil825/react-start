@@ -9,6 +9,8 @@ import debug from 'debug'
 // import hotReload from './middleware/hot-reload'
 // import headers from './middleware/headers'
 // import { setRoutes } from './router'
+// import setRouterContext from './middleware/set-router-context'
+import { router, setRoutes } from './router'
 
 const server = new Koa()
 const log = debug('lego:server.js')
@@ -21,17 +23,13 @@ log('starting')
 // server.use(headers())
 // server.use(pageRenderers())
 
-
 // if (process.env.NODE_ENV === 'development') {
 //   hotReload(server)
 // }
 
-export default function createServer() {
-  // setRoutes(assets)
-  // server.use(router.routes())
-  server.use(async (ctx) => {
-    ctx.body = 'hello world'
-  })
+export default function createServer(assets) {
+  setRoutes(assets)
+  server.use(router.routes())
   return server
 }
 

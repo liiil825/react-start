@@ -25,9 +25,7 @@ module.exports = function({ isDev, isBrowser }) {
         },
       },
 
-      include: isBrowser
-        ? PATHS.app
-        : PATHS.server,
+      include: PATHS.app,
       exclude: /node_modules/,
     },
     {
@@ -36,9 +34,7 @@ module.exports = function({ isDev, isBrowser }) {
 
       loader: 'eslint',
 
-      include: isBrowser
-        ? PATHS.app
-        : PATHS.server,
+      include: PATHS.app,
     },
   ]
 }

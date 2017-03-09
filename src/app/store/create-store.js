@@ -4,5 +4,3 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   module.exports = require('./create-store.dev')
 }
-/* eslint-enable */
-

@@ -12,7 +12,7 @@ export default function configureStore(initialState) {
     applyMiddleware(sagaMiddleware),
     DevTools.instrument(),
     persistState(
-      window.location.href.match(
+      typeof window !== 'undefined' && window.location.href.match(
         /[?&]debug_session=([^&]+)\b/
       )
     ),

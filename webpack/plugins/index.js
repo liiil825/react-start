@@ -20,7 +20,7 @@ module.exports = function({ isDev, isBrowser }) {
   }
   plugins.push(
     new webpack.EnvironmentPlugin(
-      ['NODE_ENV', 'DEBUG', 'IS_BROWSER']
+      ['NODE_ENV', 'DEBUG', 'IS_BROWSER', 'PORT']
     )
   )
 

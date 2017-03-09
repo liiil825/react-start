@@ -11,9 +11,10 @@ module.exports = function(env) {
   const isBrowser = env === 'browser'
   process.env.IS_BROWSER = isBrowser
   process.env.DEBUG = isDev
+  process.env.PORT = process.env.PORT || 3000
 
   // eslint-disable-next-line
-  console.log(`webpack start isDev:${isDev} isBrowser: ${isBrowser} env: ${env}`)
+  console.log(`webpack start isDev: ${isDev} isBrowser: ${isBrowser} env: ${env}`)
 
   const plugins = getPlugins({ isDev, isBrowser })
   const rules = getRules({ isDev, isBrowser })
