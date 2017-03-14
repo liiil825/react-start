@@ -7,8 +7,10 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { makeRoutes } from '../../routes'
 import DevTools from './dev-tools'
 
+localStorage.debug = 'worker:*'
+const log = debug('worker:a')
 const isBrowser = process.env.IS_BROWSER === 'true'
-debug('Root:isBrowser?:', isBrowser)
+log('Root:isBrowser?:', isBrowser)
 
 export default function RootDev({ store }) {
   return (

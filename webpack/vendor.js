@@ -1,7 +1,30 @@
 const clientBundles = [
   {
     name: 'vendor',
-    entry: ['react', 'react-dom', 'lodash', 'moment'],
+    entry: [
+      'react',
+      'react-dom',
+      'debug',
+    ],
+  },
+  {
+    name: 'redux',
+    entry: [
+      'redux',
+      'redux-saga',
+    ],
+  },
+  {
+    name: 'react-router',
+    entry: [
+      'react-router',
+      'react-router-redux',
+      'react-router-dom',
+    ],
+  },
+  {
+    name: 'lodash',
+    entry: 'moment',
   },
   {
     name: 'moment',

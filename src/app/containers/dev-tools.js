@@ -18,4 +18,3 @@ export default createDevTools(
     />
   </DockMonitor>
 )
-/* eslint-enable */
